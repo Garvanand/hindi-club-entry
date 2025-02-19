@@ -3,6 +3,7 @@ Pillow==10.0.0
 python-dotenv==1.0.0
 pandas==2.1.0
 streamlit==1.28.0
+zbar
 opencv-python==4.7.0
 pyzbar==0.1.9
 numpy==1.24.3
