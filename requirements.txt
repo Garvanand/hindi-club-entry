@@ -1,0 +1,8 @@
+qrcode
+Pillow
+python-dotenv
+pandas
+streamlit
+opencv-python
+pyzbar
+numpy
