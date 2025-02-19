@@ -9,6 +9,14 @@ import numpy as np
 from pyzbar.pyzbar import decode
 import io
 
+# Set page config (MUST BE FIRST STREAMLIT COMMAND)
+st.set_page_config(
+    page_title="Kavyamanch QR Scanner",
+    page_icon="📷",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
+
 # Set up logging
 logging.basicConfig(
     level=logging.INFO,
@@ -118,12 +126,8 @@ def process_image(image):
         logger.info(f"Scan attempt - Reg No: {reg_number}, Success: {success}, Message: {message}")
 
 def main():
-    st.set_page_config(
-        page_title="Kavyamanch QR Scanner",
-        page_icon="📷",
-        layout="centered"
-    )
-
+    # Remove the set_page_config from here since it's already set at the top
+    
     # Add Hindi Club logo
     try:
         st.image("hindi.jpg", width=200)
