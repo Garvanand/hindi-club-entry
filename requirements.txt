@@ -6,4 +6,5 @@ streamlit
 opencv-python
 pyzbar
 numpy
-
+PyOpenGL
+opencv-contrib-python
