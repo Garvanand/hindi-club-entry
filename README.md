@@ -1,69 +1,73 @@
-# QR Code Email Sender
+# Kavyamanch Attendance System
 
-This Python script generates and emails QR codes to registered participants based on their registration numbers.
-
-## Features
-
-- Reads participant data from a CSV file
-- Generates QR codes with registration numbers
-- Adds visual labels to QR codes
-- Sends personalized emails with QR code attachments
-- Includes comprehensive error handling and logging
-- Uses environment variables for secure SMTP configuration
-
-## Prerequisites
-
-- Python 3.7 or higher
-- Required Python packages (install using `requirements.txt`)
+A Streamlit-based QR code attendance system for events.
 
 ## Installation
 
-1. Clone this repository
-2. Install required packages:
+1. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
+
+2. Install dependencies:
+   ```bash
+   pip install --upgrade pip setuptools wheel
    pip install -r requirements.txt
    ```
 
-3. Create a `.env` file in the project root with your SMTP settings:
-   ```
-   SMTP_SERVER=smtp.gmail.com
-   SMTP_PORT=587
-   SMTP_USERNAME=your-email@gmail.com
-   SMTP_PASSWORD=your-app-password
+3. Install system dependencies (Ubuntu/Debian):
+   ```bash
+   sudo apt-get update
+   sudo apt-get install -y libzbar0
    ```
 
-   Note: If using Gmail, you'll need to create an App Password in your Google Account settings.
+## Running the App
+
+```bash
+streamlit run attendance_app.py
+```
+
+## Deployment on Streamlit Cloud
+
+1. Fork this repository
+2. Go to [share.streamlit.io](https://share.streamlit.io)
+3. Connect your GitHub repository
+4. Deploy!
+
+## Features
+
+- QR Code scanning for attendance
+- QR Code generation for participants
+- Real-time attendance statistics
+- Downloadable attendance reports
+
+## File Structure
+```
+├── .streamlit/
+│   └── config.toml
+├── pages/
+│   ├── 01_QR_Generator.py
+│   └── 02_Attendance_Stats.py
+├── attendance_app.py
+├── requirements.txt
+├── packages.txt
+├── runtime.txt
+└── README.md
+```
 
 ## CSV File Format
 
-Create a `registrations.csv` file with the following columns:
+The app expects a CSV file with the following columns:
+- Name
+- Reg. No.
+- ATTENDANCE (will be created if not present)
+
+## Environment Variables
+
+Create a `.env` file (for local development):
 ```
-registration_number,email
-REG001,participant1@example.com
-REG002,participant2@example.com
+ATTENDANCE_CSV=your_csv_file.csv
 ```
 
-## Usage
-
-1. Place your `registrations.csv` file in the project directory
-2. Run the script:
-   ```
-   python qr_email_sender.py
-   ```
-
-## Error Handling
-
-The script includes comprehensive error handling for:
-- Missing or invalid CSV files
-- Invalid email addresses
-- QR code generation failures
-- Email sending failures
-- Missing SMTP credentials
-
-Errors are logged to the console with timestamps for debugging.
-
-## Output
-
-- Generated QR codes are saved in the `qr_codes` directory
-- Each participant receives an email with their QR code attached
-- A log of successful sends and errors is displayed in the console
+For Streamlit Cloud, add these in the secrets management section.
