@@ -6,4 +6,4 @@ streamlit
 opencv-python
 pyzbar
 numpy
-cv2
+
