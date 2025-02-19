@@ -1,9 +1,17 @@
 qrcode==7.4.2
 Pillow==10.0.0
 python-dotenv==1.0.0
+<<<<<<< HEAD
 pandas==2.0.3
 streamlit==1.29.0
 opencv-python-headless==4.8.0.76
 pyzbar==0.1.9
 numpy==1.24.3
 plotly==5.18.0
+=======
+pandas==2.1.0
+streamlit==1.28.0
+opencv-python==4.7.0
+pyzbar==0.1.9
+numpy==1.24.3
+>>>>>>> 95b2fe132b5e5e9e069a7f197e89bd1c656d5922
