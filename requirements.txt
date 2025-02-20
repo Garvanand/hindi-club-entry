@@ -3,7 +3,7 @@ Pillow
 python-dotenv
 pandas
 streamlit
-opencv-python
+opencv-python-headless
 pyzbar
 numpy
 plotly
